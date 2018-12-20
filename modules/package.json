@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build": "parcel build --no-source-maps --out-dir ../static/modules index.js"
+  },
+  "dependencies": {
+    "katex": "^0.10.0"
+  },
+  "devDependencies": {
+    "parcel": "^1.11.0"
+  }
+}
