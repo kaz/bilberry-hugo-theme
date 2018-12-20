@@ -55,7 +55,8 @@
 
         {{ $variables := resources.Get "sass/_variables.scss" }}
         {{ $theme := resources.Get "sass/theme.scss" }}
-        {{ $combined := slice $variables $theme | resources.Concat "sass/combined.scss" | resources.ExecuteAsTemplate "sass/combined.scss" .  }}
+        {{ $custom := resources.Get "sass/custom.scss" }}
+        {{ $combined := slice $variables $theme $custom | resources.Concat "sass/combined.scss" | resources.ExecuteAsTemplate "sass/combined.scss" .  }}
         {{ $style := $combined | toCSS | minify | fingerprint }}
         <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
