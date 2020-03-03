@@ -88,7 +88,8 @@
         <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 
         {{ $jsTemplate := resources.Get "js/theme.js" }}
-        {{ $secureJS := $jsTemplate | resources.ExecuteAsTemplate "js/theme.js" . | fingerprint "md5" }}
+        {{ $jsCustom := resources.Get "js/custom.js" }}
+        {{ $secureJS := slice $jsTemplate $jsCustom | resources.Concat "js/theme.js" | resources.ExecuteAsTemplate "js/theme.js" . | fingerprint "md5" }}
         <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 
         <script>
