@@ -1,0 +1,52 @@
+@mixin vendor-prefix($property, $value) {
+	$vendor-prefixes: ("moz", "webkit", "ms");
+	@each $vendor-prefix in $vendor-prefixes {
+		#{'-' + $vendor-prefix + '-' + $property}: $value;
+	}
+	#{$property}: $value;
+}
+
+article {
+	.content {
+		h1:not(.article-title) {
+			font-size: 2.5em;
+			margin-top: 1.5em;
+			border-bottom: 1px solid $algolia-border-color;
+			padding: 0 0 .1em -.4em;
+		}
+		h2 {
+			font-size: 2em;
+			margin-top: 1.5em;
+			border-bottom: 1px dashed $algolia-border-color;
+			padding: 0 0 .1em -.4em;
+		}
+		h3 {
+			font-size: 1.5em;
+			margin-top: 1.5em;
+		}
+		h4 {
+			font-size: 1.3em;
+			margin-top: 1.5em;
+		}
+		a {
+			color: $highlight-color;
+			font-style: normal !important;
+
+			&:hover {
+				text-decoration: underline;
+				text-decoration-style: dotted;
+			}
+		}
+		pre {
+			@include vendor-prefix(tab-size, 4);
+		}
+	}
+}
+
+footer {
+	.container {
+		.categories, .right {
+			flex: 1 0 auto;
+		}
+	}
+}
