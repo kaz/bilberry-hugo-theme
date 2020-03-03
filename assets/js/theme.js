@@ -80,3 +80,5 @@ $(document).ready(function () {
 });
 
 hljs.initHighlightingOnLoad();
+
+require('./custom.js');

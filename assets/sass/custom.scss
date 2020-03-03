@@ -1,3 +1,5 @@
+@import "~katex/dist/katex.css";
+
 @mixin vendor-prefix($property, $value) {
 	$vendor-prefixes: ("moz", "webkit", "ms");
 	@each $vendor-prefix in $vendor-prefixes {
