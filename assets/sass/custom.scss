@@ -40,6 +40,13 @@ article {
 		pre {
 			@include vendor-prefix(tab-size, 4);
 		}
+		.share {
+			margin-top: 5em;
+
+			.fb-like {
+				top: -6.66px;
+			}
+		}
 	}
 }
 
